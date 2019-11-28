@@ -1,0 +1,189 @@
+@media (max-width:728px) { 
+    .navbar-dark .navbar-toggler {
+        color: #20ca4b;
+        font-weight: bold;
+
+    
+      }
+      
+    .navbar-toggler {
+      font-size: 20px;
+      background-color: #e72346;
+    
+ 
+    }
+    .navbar-nav {
+        display: flex;
+        margin:0 auto;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 0;
+        list-style: none;
+        text-align: center;
+    }
+    .bg-dark {
+        background-color: rgb(230, 172, 86)!important;
+    }
+    .carousel-caption img{
+        height: 150px;
+        width: 220px;
+        margin-bottom:50px;
+
+    }
+    .carousel-caption p {
+        margin-bottom:50px;
+        position: absolute;
+        top:150px;
+        right: 40px;
+        font-weight: bold;
+        font-size: 10px;  
+    }
+    .carousel-caption .separator {
+          display: none;
+    
+    }
+    .carousel-caption .btn-danger{
+        margin-bottom:50px;
+        position: absolute;
+        top:200px;
+        right: 100px;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 2px 10px 2px 10px;
+    
+        
+    }
+   
+   
+  
+    .carousel-item img{
+        height: 20rem;
+     
+     }
+     a.arro {
+        height: 30px;
+        width: 30px;
+        background: #3d3f3d;
+        top:160px;
+        left:20px;
+    }
+    a.arroNext{
+        right: 20px;
+    }
+     .scrooldown img {
+        position: absolute;
+        background: #f4f5f9;
+        border-radius: 50%;
+        width: 40px;
+        height:40px;
+        text-align: center;
+        line-height: 48px;
+        left: 44%;
+        bottom: -2%;
+        top: 19rem;
+    }
+    .section h2{
+        font-size: 26px;
+    }
+    .section p {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .section .row .featureInfo h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .owl-carousel .item img {
+    
+        height:200px;
+    }
+
+.section .row .featureImg{
+    position: relative;
+}
+.section .row .featureIcon{
+    position: absolute;
+    top:80px;
+    right: 140px;
+    width:100px;
+}
+.fourthsection img {
+    overflow-x: hidden;
+    width: 300px;
+    height: auto;
+    padding-left: 100px;
+}
+.fourthsection .row1{
+    margin-top:10px;
+}
+.square{
+    height:auto;
+}
+.fourthsection .grid_item_overlay {
+    position: absolute;
+    left: 33%;
+    top: 0%;
+    width: 200px;
+    height: 100%;
+    background: rgba(9, 168, 6, 0.6);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.6s;
+    padding-top: 35%;
+    z-index: 99;
+}
+.fourthsection .grid_item_overlay h3{
+    color:#fff;
+    font-size: 14px;
+    margin-top: 160px;
+    border-top:5px solid #fff;
+ }
+ .fourthsection .grid_item_overlay .half-pic{
+     color:#fff;
+     font-size: 14px;
+     margin-top: 50px;
+  }
+
+.sevensection .row  .ImgSec img{
+    position: relative;
+    width: 300px;
+    
+   }
+   .sevensection .row .ImgSec img {
+    position: relative;
+    width: 300px;
+    height: 30rem;
+}
+.sevensection .card {
+    margin-right: 32px;
+    width: 19rem;
+    height: 30rem;
+}
+.sevensection .card .card-body p {
+    font-weight: bold;
+    font-size: 15px;
+    color: #347093;
+    text-align: right;
+}
+.sevensection .card .card-body h2 {
+    font-weight: bold;
+    font-size: 12px;
+    color: #80cbef;
+    text-align: left;
+}
+.sevensection .card .card-body .img-card {
+    height: 100px;
+}
+   
+.footer span{
+    font-size: 13px;
+    font-weight: 300;
+    color:#999999;
+}
+.footer ul li a{
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+}

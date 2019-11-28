@@ -1,0 +1,83 @@
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    font-size: 50px;
+    color: #fff;
+} 
+.owl-dots {
+    display: none;
+    }
+.owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    float: left;
+} 
+
+ .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    float: right;
+
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+    background: 0 0;
+ 
+    color: inherit;
+    margin-top: -200px;
+    margin-right: 600px;
+    position: absolute;
+    outline: none;
+
+}
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    margin-top: -200px;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    float: right;
+    position: absolute;
+    right: -50px;
+    outline: none;
+}
+.owl-carousel .owl-nav button.owl-prev:hover{
+    border:none;
+    cursor: pointer;;
+    outline: none;
+    background: none;
+    color: red;
+
+}
+.owl-carousel .owl-nav button.owl-next:hover{
+    border:none;
+    cursor: pointer;;
+    outline: none;
+    background: none;
+    color: red;
+
+}
+             
+                
+             
+                
+    
+    
+    
+    
+     
+                
+                
+             
+                
+    
+    
+    
+    
+     
