@@ -34,10 +34,30 @@ body {
     border: none;
 }
 
+/* Navbar */
 .navbar-dark .navbar-nav .nav-link {
     padding-left: 25px;
     color: #fff;
     font-size: 16px;
+}
+
+.navbar-brand .navbar-brand__image {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.navbar-brand .navbar-brand__image img {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.navbar-brand .navbar-brand__logo-text {
+    display: inline-block;
+}
+
+.navbar-brand .navbar-brand__logo-text .eng_logo {
+    font-size: .9rem;
 }
 
 .bg-dark {
@@ -162,10 +182,23 @@ a.arro:hover {
     transition: background .8 ease;
 }
 
-/* .section .logo {
-    display: flex;
-    margin: 0 auto;
-} */
+.section .row .featureImg {
+    position: relative;
+}
+
+.section .row .featureImg img {
+    width: 300px;
+}
+
+.section .row .featureIcon {
+    position: absolute;
+    top: 60px;
+    right: 95px;
+}
+
+.section .row .featureIcon img {
+    width: 100px;
+}
 
 .section .row .featureInfo h3 {
     font-size: 20px;
@@ -181,17 +214,6 @@ a.arro:hover {
 
 .section .row .featureInfo a:hover {
     text-decoration: none;
-}
-
-.section .row .featureImg {
-    position: relative;
-}
-
-.section .row .featureIcon {
-    position: absolute;
-    top: 70px;
-    right: 95px;
-    width: 100px;
 }
 
 .thirdsection {
@@ -587,8 +609,12 @@ a.arro:hover {
 
 .sevensection .row .ImgSec img {
     position: relative;
-    width: 585px;
-    height: 560px;
+    width: 400px;
+    height: 400px;
+    object-position: top center;
+    object-fit: cover;
+    border: 10px solid #f7f7f7;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .3);
 }
 
 .sevensection .card {

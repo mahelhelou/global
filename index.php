@@ -1,23 +1,11 @@
 <!Doctype html>
-<html>
+<html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>الشركة العالمية</title>
 
-	<!-- BS files, font-awesome & libs -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/owl.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/responsive.css" type="text/css">
-
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600,700&display=swap" rel="stylesheet">
+	<?php wp_head(); ?>
 </head>
 
 <body>
@@ -29,8 +17,15 @@
 	<main>
 		<nav id="nav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
-				<a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt="">&nbsp; &nbsp; العالمية للتطوير
-					والتدريب</a>
+				<a class="navbar-brand" href="<?php echo site_url(); ?>">
+					<div class="navbar-brand__image">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/logo1.png' ?>" alt="">
+					</div>
+					<div class="navbar-brand__logo-text">
+						<span class="ar_logo">العالمية للتطوير والتدريب</span><br>
+						<span class="eng_logo">Global for Development & Training</span>
+					</div>
+				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
 					aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -71,28 +66,41 @@
 				<a class="btn btn-danger" href="">خدماتنا</a>
 			</div> -->
 			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="assets/img/backslidr.png" class="d-block w-100" alt="...">
+			
+			<?php
+			$index=0;
+				$args = array(
+					'post_type' => 'slider',
+					'posts_per_page' => 5
+				);
 
+				$slider = new WP_Query($args);
+
+				while ($slider->have_posts()) {
+					$slider->the_post(); ?>
+
+				<div class="<?php if($index==0) echo 'carousel-item active' ; else echo'carousel-item'; ?>" >
+					<img src="<?php echo get_field('slider_image')['url']; ?>" class="d-block w-100" alt="">
 				</div>
-				<div class="carousel-item">
-					<img src="assets/img/backslidr.png" class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="assets/img/backslidr.png" class="d-block w-100" alt="...">
-				</div>
+				
+				<?php 
+				$index++;
+				}
+					wp_reset_postdata();
+				?>
+			
 			</div>
 			<a class="carousel-control-prev arro " href="#carouselExampleControls" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a>
-			<a class="carousel-control-next arro arroNext" href="#carouselExampleControls" role="button" data-slide="next">
+			<a class="carousel-control-next arro arroNext" href="#carouselExampleControls"  role="button" data-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
 		<div class="scrooldown">
-			<a href="#partners"><img src="assets/img/scrolIcon.png" alt=""></a>
+			<a href="#partners"><img src="<?php echo get_template_directory_uri() . '/assets/img/scrolIcon.png' ?>" alt=""></a>
 		</div>
 	</div>
 
@@ -100,7 +108,7 @@
 	<div id="about" class="about-us section py-5">
 		<div class="container text-center">
 			<h2 class="mt-3">من نحن</h2>
-			<p class="mt-3 mb-5 ">شركة فلسطينية، تقدم خدمات تدريبية واستشارية في المجال الصحي وغدارة الأزمات والكــوارث،
+			<p class="mt-3 mb-5 ">شركة فلسطينية، تقدم خدمات تدريبية واستشارية في المجال الصحي وإدارة الأزمات والكــوارث،
 				كما وتصميم وإعداد خطة الطوارئ للمجتمع والمؤسسات</p>
 		</div>
 	</div>
@@ -109,62 +117,35 @@
 		<div class="container text-center">
 			<h2>خدماتنا</h2>
 			<div class="row">
-				<div class="col-lg-3">
-					<div class="featureImg">
-						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
+				<?php
+					$args = array(
+						'post_type' => 'services',
+						'posts_per_page' => 4
+					);
+
+					$services = new WP_Query($args);
+
+					while ($services->have_posts()) {
+						$services->the_post(); ?>
+					
+					<div class="col-lg-3">
+						<div class="featureImg">
+							<img class="img-fluid mt-3" src="<?php echo get_field('service_image')['url']; ?>" alt="">
+						</div>
+						<div class="featureIcon">
+							<a href="">
+								<img class="img-fluid" src="<?php echo get_field('service_icon')['url']; ?>" alt="">
+							</a>
+						</div>
+						<div class="featureInfo">
+							<h3><?php the_title(); ?></h3>
+						</div>
 					</div>
-					<div class="featureIcon">
-						<a href="">
-							<img class="img-fluid" src="assets/img/f1.png" alt="">
-						</a>
-					</div>
-					<div class="featureInfo">
-						<h3>التدريب الصحي وادارة الأزمات والكوارث</h3>
-						<!-- <a href="">المزيد</a> -->
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="featureImg">
-						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
-					</div>
-					<div class="featureIcon">
-						<a href="">
-							<img class="img-fluid" src="assets/img/f2.png" alt="">
-						</a>
-					</div>
-					<div class="featureInfo">
-						<h3>إعداد خطط إخلاء آمن</h3>
-						<!-- <a href="">المزيد</a> -->
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="featureImg">
-						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
-					</div>
-					<div class="featureIcon">
-						<a href="">
-							<img class="img-fluid" src="assets/img/f3.png" alt="">
-						</a>
-					</div>
-					<div class="featureInfo">
-						<h3> إعداد دليل الأمن والسلامة</h3>
-						<!-- <a href="">المزيد</a> -->
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="featureImg">
-						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
-					</div>
-					<div class="featureIcon">
-						<a href="">
-							<img class="img-fluid" src="assets/img/f4.png" alt="">
-						</a>
-					</div>
-					<div class="featureInfo">
-						<h3>تصميم نظام طوارئ كامل</h3>
-						<!-- <a href="">المزيد</a> -->
-					</div>
-				</div>
+					
+					<?php }
+
+					wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</div>
@@ -176,18 +157,32 @@
 			<div class="container">
 				<!-----owl carousal---->
 				<div class="owl-carousel owl-theme mt-3 mb-5 text-center">
+				<?php
+					$args = array(
+						'post_type' => 'video',
+						'posts_per_page' => -1
+					);
+
+					$video = new WP_Query($args);
+
+					while ($video->have_posts()) {
+						$video->the_post(); ?>
+					
 					<div class="item">
 						<div class="single_portfolio " style="display: inline-block;" data-bound="">
-							<a href="assets/img/slide1.png" class="portfolio-img">
-								<a class="icon-item" href=""><i class="fas fa-caret-right "></i></a>
-								<img src="assets/img/slide1.png" alt="">
+							<a href="<?php the_field('video_url'); ?>" class="portfolio-img">
+								<a class="icon-item" href="<?php the_field('video_url'); ?>"><i class="fas fa-caret-right "></i></a>
+								<img src="<?php echo get_field('video_thumbnail')['url']; ?>" alt="">
 								<div class="grid_item_overlay">
-									<h3 class="text-right half-pic">دورة اعداد خطط اخلاء امن</h3>
+									<h3 class="text-right half-pic"><?php the_title(); ?></h3>
 								</div>
 							</a>
 						</div>
-
 					</div>
+
+				<?php }
+					wp_reset_postdata();
+				?>
 					<div class="item">
 						<div class="single_portfolio " style="display: inline-block;" data-bound="">
 							<a href="assets/img/slide3.png" class="portfolio-img">
@@ -256,18 +251,34 @@
 			<div class="separator mt-4 "></div>
 			<div class="square">
 				<div class="row my-5">
+					<?php
+						$args = array(
+							'post_type' => 'course-picture',
+							'posts_per_page' => 4
+						);
+
+						$coursePicture = new WP_Query($args);
+
+						while ($coursePicture->have_posts()) {
+							$coursePicture->the_post(); ?>
+						
 						<div class="col-lg-3 row1">
-								<div class="single_portfolio " style="display: inline-block;" data-bound="">
-									<a href="assets/img/pic1.png" class="portfolio-img">
-										<img src="assets/img/pic1.png" alt="">
-										<div class="grid_item_overlay">
-											<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
-										</div>
-									</a>
-								</div>
+							<div class="single_portfolio " style="display: inline-block;" data-bound="">
+								<a href="<?php echo site_url(); ?>" class="portfolio-img">
+									<img src="<?php echo get_field('course_image')['url']; ?>" alt="">
+									<div class="grid_item_overlay">
+										<h3 class="text-right"><?php the_field('course_description'); ?></h3>
+									</div>
+								</a>
 							</div>
+						</div>
+						
+						<?php }
+
+						wp_reset_postdata();
+					?>
 							<div class="col-lg-3 row1">
-									<div class="single_portfolio " style="display: inline-block;" data-bound="">
+									<div class="single_portfolio" style="display: inline-block;" data-bound="">
 										<a href="assets/img/pic1.png" class="portfolio-img">
 											<img src="assets/img/pic1.png" alt="">
 											<div class="grid_item_overlay">
@@ -310,53 +321,25 @@
 			<div class="separator mt-4 "></div>
 			<div class="container text-center">
 				<div class="row">
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/success1.png" alt="">
+				<?php
+					$args = array(
+						'post_type' => 'partner',
+						'posts_per_page' => 15
+					);
+
+					$partner = new WP_Query($args);
+
+					while ($partner->have_posts()) {
+						$partner->the_post(); ?>
+					
+					<div class="col-lg-2">
+						<img class="img-fluid" src="<?php echo get_field('partner_logo')['url']; ?>" alt="">
 					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/success2.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/success3.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s4.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s5.png" alt="">
-					</div>
-				</div>
-				<div class="row mt-3">
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s6.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s7.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s8.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s9.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s10.png" alt="">
-					</div>
-				</div>
-				<div class="row mt-3 mb-5 ">
-					<div class="col-lg">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s11.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s12.png" alt="">
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/s13.png" alt="">
-					</div>
-					<div class="col-lg">
-					</div>
+				
+				
+				<?php }
+					wp_reset_postdata();
+				?>
 				</div>
 			</div>
 		</div>
@@ -370,31 +353,28 @@
 				<p class="mt-3">النجاح لا يكتمل الا بفريق عمل مثالي</p>
 				<div class="separator mt-4 "></div>
 				<div class="row pt-5 pb-5">
-					<div class=" col-lg">
-						<img class="img-fluid" src="assets/img/tamer.png" alt="">
-						<h3>تامر حمدان</h3>
-						<p>رئيس مجلس ادارة الشركة العالمية للتطوير والتدريب</p>
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/tamer.png" alt="">
-						<h3>تامر حمدان</h3>
-						<p>رئيس مجلس ادارة الشركة العالمية للتطوير والتدريب</p>
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/tamer.png" alt="">
-						<h3>تامر حمدان</h3>
-						<p>رئيس مجلس ادارة الشركة العالمية للتطوير والتدريب</p>
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/tamer.png" alt="">
-						<h3>تامر حمدان</h3>
-						<p>رئيس مجلس ادارة الشركة العالمية للتطوير والتدريب</p>
-					</div>
-					<div class="col-lg">
-						<img class="img-fluid" src="assets/img/tamer.png" alt="">
-						<h3>تامر حمدان</h3>
-						<p>رئيس مجلس ادارة الشركة العالمية للتطوير والتدريب</p>
-					</div>
+					<?php
+						$args = array(
+							'post_type' => 'team',
+							'posts_per_page' => 5
+						);
+
+						$team = new WP_Query($args);
+
+						while ($team->have_posts()) {
+							$team->the_post(); ?>
+
+
+						<div class=" col-lg">
+							<img class="img-fluid" src="<?php echo get_field('team_member_avatar')['url']; ?>" alt="">
+							<h3><?php the_title(); ?></h3>
+							<p><?php the_field('job_title'); ?></p>
+						</div>
+					
+					<?php
+						}
+						wp_reset_postdata();
+					?>
 				</div>
 			</div>
 		</div>
@@ -408,12 +388,12 @@
 			<div class="container text-center">
 				<div class="row mt-5 mb-5">
 					<div class="col-lg-6 ImgSec">
-						<img class="mr-lg-5 " src="assets/img/paltel.png" alt="">
+						<img class="mr-lg-5 rounded-circle" src="<?php echo get_template_directory_uri() . '/assets/img/paltel.png' ?>" alt="">
 					</div>
 					<div class="col-lg-6 align-self-center">
 						<div class="card">
 							<div class="card-body">
-								<img class="img-card" src="assets/img/s5.png" alt="">
+								<img class="img-card" src="<?php echo get_template_directory_uri() . '/assets/img/s5.png' ?>" alt="">
 								<p class="card-text mb-5">الشركة العالمية للتطوير و التدريب ،، شركة متميزة بتخصصها فى مجال
 									التثقيف و التوعية الطبية و ادارة الازمات و الطوارئء و الاخلاء الآمن .. كما تتميز بوجود مجموعة
 									من المدربين الاكفاء بالاضافة الى وجود إدارة حكيمة و حديثة بقيادة المجتهد و المتألق تامرعصام
@@ -459,6 +439,7 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/main.js"></script>
+	<?php wp_footer(); ?>
 </body>
 
 </html>
