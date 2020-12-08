@@ -15,5 +15,9 @@ Tags: Simple theme, green, RTL support, footer widgets, sidebar, one menu
 @import './assets/css/owl.carousel.min.css';
 @import './assets/css/owl.theme.default.min.css';
 @import './assets/css/owl.css';
+<<<<<<< HEAD
 @import './assets/css/style.css';
+=======
+@import './assets/css/main.css';
+>>>>>>> 9a9e87db07606660b18fd029d622c17dca3c4070
 @import './assets/css/responsive.css';

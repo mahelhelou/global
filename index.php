@@ -17,9 +17,15 @@
 	<main>
 		<nav id="nav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
+<<<<<<< HEAD:index.php
 				<a class="navbar-brand" href="<?php echo site_url(); ?>">
 					<div class="navbar-brand__image">
 						<img src="<?php echo get_template_directory_uri() . '/assets/img/logo1.png' ?>" alt="">
+=======
+				<a class="navbar-brand" href="#">
+					<div class="navbar-brand__image">
+						<img src="assets/img/logo1.png" alt="">
+>>>>>>> 9a9e87db07606660b18fd029d622c17dca3c4070:index.html
 					</div>
 					<div class="navbar-brand__logo-text">
 						<span class="ar_logo">العالمية للتطوير والتدريب</span><br>
@@ -117,6 +123,7 @@
 		<div class="container text-center">
 			<h2>خدماتنا</h2>
 			<div class="row">
+<<<<<<< HEAD:index.php
 				<?php
 					$args = array(
 						'post_type' => 'services',
@@ -140,6 +147,62 @@
 						<div class="featureInfo">
 							<h3><?php the_title(); ?></h3>
 						</div>
+=======
+				<div class="col-lg-3">
+					<div class="featureImg">
+						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
+					</div>
+					<div class="featureIcon">
+						<a href="">
+							<img class="img-fluid" src="assets/img/f1.png" alt="">
+						</a>
+					</div>
+					<div class="featureInfo">
+						<h3>التدريب الصحي وادارة الأزمات والكوارث</h3>
+						<!-- <a href="">المزيد</a> -->
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="featureImg">
+						<img class="img-fluid mt-3" src="assets/img/features2.png" alt="">
+					</div>
+					<div class="featureIcon">
+						<a href="">
+							<img class="img-fluid" src="assets/img/f2.png" alt="">
+						</a>
+					</div>
+					<div class="featureInfo">
+						<h3>إعداد خطط إخلاء آمن</h3>
+						<!-- <a href="">المزيد</a> -->
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="featureImg">
+						<img class="img-fluid mt-3" src="assets/img/features3.png" alt="">
+					</div>
+					<div class="featureIcon">
+						<a href="">
+							<img class="img-fluid" src="assets/img/f3-2.png" alt="">
+						</a>
+					</div>
+					<div class="featureInfo">
+						<h3> إعداد دليل الأمن والسلامة</h3>
+						<!-- <a href="">المزيد</a> -->
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="featureImg">
+						<img class="img-fluid mt-3" src="assets/img/features.png" alt="">
+					</div>
+					<div class="featureIcon">
+						<a href="">
+							<img class="img-fluid" src="assets/img/f4-2.png" alt="">
+						</a>
+					</div>
+					<div class="featureInfo">
+						<h3>تصميم نظام طوارئ كامل</h3>
+						<!-- <a href="">المزيد</a> -->
+>>>>>>> 9a9e87db07606660b18fd029d622c17dca3c4070:index.html
 					</div>
 					
 					<?php }
@@ -251,6 +314,7 @@
 			<div class="separator mt-4 "></div>
 			<div class="square">
 				<div class="row my-5">
+<<<<<<< HEAD:index.php
 					<?php
 						$args = array(
 							'post_type' => 'course-picture',
@@ -286,27 +350,48 @@
 											</div>
 										</a>
 									</div>
+=======
+					<div class="col-lg-3 row1">
+						<div class="single_portfolio " style="display: inline-block;" data-bound="">
+							<a href="assets/img/pic1.png" class="portfolio-img">
+								<img src="assets/img/pic1.png" alt="">
+								<div class="grid_item_overlay">
+									<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
 								</div>
-								<div class="col-lg-3 row1">
-										<div class="single_portfolio " style="display: inline-block;" data-bound="">
-											<a href="assets/img/pic1.png" class="portfolio-img">
-												<img src="assets/img/pic1.png" alt="">
-												<div class="grid_item_overlay">
-													<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
-												</div>
-											</a>
-										</div>
-									</div>
-									<div class="col-lg-3 row1">
-											<div class="single_portfolio " style="display: inline-block;" data-bound="">
-												<a href="assets/img/pic1.png" class="portfolio-img">
-													<img src="assets/img/pic1.png" alt="">
-													<div class="grid_item_overlay">
-														<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
-													</div>
-												</a>
-											</div>
-										</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 row1">
+						<div class="single_portfolio " style="display: inline-block;" data-bound="">
+							<a href="assets/img/pic1.png" class="portfolio-img">
+								<img src="assets/img/pic1.png" alt="">
+								<div class="grid_item_overlay">
+									<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
+>>>>>>> 9a9e87db07606660b18fd029d622c17dca3c4070:index.html
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 row1">
+						<div class="single_portfolio " style="display: inline-block;" data-bound="">
+							<a href="assets/img/pic1.png" class="portfolio-img">
+								<img src="assets/img/pic1.png" alt="">
+								<div class="grid_item_overlay">
+									<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 row1">
+						<div class="single_portfolio " style="display: inline-block;" data-bound="">
+							<a href="assets/img/pic1.png" class="portfolio-img">
+								<img src="assets/img/pic1.png" alt="">
+								<div class="grid_item_overlay">
+									<h3 class="text-right">تسليم شهادات دورة من دورات العالمية التي تقدمها</h3>
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -388,7 +473,11 @@
 			<div class="container text-center">
 				<div class="row mt-5 mb-5">
 					<div class="col-lg-6 ImgSec">
+<<<<<<< HEAD:index.php
 						<img class="mr-lg-5 rounded-circle" src="<?php echo get_template_directory_uri() . '/assets/img/paltel.png' ?>" alt="">
+=======
+						<img class="mr-lg-5 rounded-circle" src="assets/img/paltel.png" alt="">
+>>>>>>> 9a9e87db07606660b18fd029d622c17dca3c4070:index.html
 					</div>
 					<div class="col-lg-6 align-self-center">
 						<div class="card">
